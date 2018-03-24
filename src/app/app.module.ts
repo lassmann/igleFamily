@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
-import {LoginComponent} from './login/login.component';
+import {LoginComponent} from './admin/login/login.component';
 import {MaterialModule} from './material/material.module';
 import { HomeComponent } from './home/home.component';
 
