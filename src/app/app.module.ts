@@ -8,6 +8,8 @@ import {LoginComponent} from './admin/login/login.component';
 import {MaterialModule} from './material/material.module';
 import { HomeComponent } from './home/home.component';
 
+// Core
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
