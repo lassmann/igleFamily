@@ -10,12 +10,22 @@ import { HomeComponent } from './home/home.component';
 
 // Core
 import { CoreModule } from './core/core.module';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { CalendarComponent } from './admin/dashboard/calendar/calendar.component';
+import { BlogComponent } from './admin/dashboard/blog/blog.component';
+import { FriendsComponent } from './admin/dashboard/friends/friends.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    CalendarComponent,
+    BlogComponent,
+    FriendsComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
