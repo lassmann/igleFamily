@@ -8,6 +8,7 @@ import {DashboardComponent} from './admin/dashboard/dashboard.component';
 import {BlogComponent} from './admin/dashboard/blog/blog.component';
 import {FriendsComponent} from './admin/dashboard/friends/friends.component';
 import {CalendarComponent} from './admin/dashboard/calendar/calendar.component';
+import { AuthGuard } from './core/auth.guard';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
     }, {
       path: 'dashboard',
       component: DashboardComponent,
+      canActivate: [AuthGuard],
       children: [
         {
           path: 'blog',
@@ -43,13 +45,14 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'admin'
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule {
 }

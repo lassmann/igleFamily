@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFireDatabase} from 'angularfire2/database';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-calendar',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+  calendarList: Observable<any[]>;
 
-  constructor() { }
+  constructor(db: AngularFireDatabase) {
+    this.calendarList = db.list('events').valueChanges();
+  }
 
   ngOnInit() {
   }

@@ -1,1 +1,3 @@
-Aca va CRUD Calendar
+<div *ngFor="let event of calendarList | async" class="card">
+  {{event | json}}
+</div>

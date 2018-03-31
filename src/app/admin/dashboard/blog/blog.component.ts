@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFireDatabase} from 'angularfire2/database';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-blog',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
+  blogList: Observable<any[]>;
 
-  constructor() { }
+  constructor(db: AngularFireDatabase) {
+    this.blogList = db.list('blog').valueChanges();
+  }
 
   ngOnInit() {
   }
