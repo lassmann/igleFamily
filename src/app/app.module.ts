@@ -22,6 +22,7 @@ import { FriendsComponent } from './admin/dashboard/friends/friends.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { environment } from '../environments/environment';
+import { TopNavComponent } from './admin/dashboard/top-nav/top-nav.component';
 export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
@@ -33,7 +34,8 @@ export const firebaseConfig = environment.firebaseConfig;
     CalendarComponent,
     BlogComponent,
     FriendsComponent,
-    AdminComponent
+    AdminComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
