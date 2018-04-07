@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span><button mat-button [matMenuTriggerFor]="menu">Aca va el nombre del usuario</button></span>
+  <span><button mat-button [matMenuTriggerFor]="menu">{{userData.email}}</button></span>
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="logout()">Logout</button>
   </mat-menu>

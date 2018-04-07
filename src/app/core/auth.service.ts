@@ -7,18 +7,12 @@ import {AngularFirestore, AngularFirestoreDocument} from 'angularfire2/firestore
 import {NotifyService} from './notify.service';
 
 import {Observable} from 'rxjs/Observable';
-import { switchMap } from 'rxjs/operators';
-
-interface User {
-  uid: string;
-  email?: string | null;
-  photoURL?: string;
-  displayName?: string;
-}
+import {switchMap} from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
   user: Observable<User | null>;
+  userData: User;
 
   constructor(private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
@@ -35,6 +29,7 @@ export class AuthService {
     this.user = this.afAuth.authState
       .switchMap((user) => {
         if (user) {
+          this.userData = user;
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
           return Observable.of(null);
@@ -60,18 +55,9 @@ export class AuthService {
       .catch((error) => this.handleError(error));
   }
 
-  // Sends email allowing user to reset password
-  resetPassword(email: string) {
-    const fbAuth = firebase.auth();
-
-    return fbAuth.sendPasswordResetEmail(email)
-      .then(() => this.notify.update('Password update email sent', 'info'))
-      .catch((error) => this.handleError(error));
-  }
-
   signOut() {
     this.afAuth.auth.signOut().then(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/admin/login']);
     });
   }
 
