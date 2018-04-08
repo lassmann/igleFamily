@@ -23,6 +23,7 @@ import { AdminComponent } from './admin/admin.component';
 
 import { environment } from '../environments/environment';
 import { TopNavComponent } from './admin/dashboard/top-nav/top-nav.component';
+import { FirebaseServiceService } from './services/firebase-service.service';
 export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
@@ -48,7 +49,7 @@ export const firebaseConfig = environment.firebaseConfig;
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
   ],
-  providers: [],
+  providers: [FirebaseServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
