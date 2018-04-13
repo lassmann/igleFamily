@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
-import {AuthService} from '../../core/auth.service';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../../core/auth.service';
+import { Router } from '@angular/router';
 
 type UserFields = 'email' | 'password';
 type FormErrors = { [u in UserFields]: string };
@@ -9,7 +9,7 @@ type FormErrors = { [u in UserFields]: string };
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: [ './login.component.scss' ]
 })
 export class LoginComponent implements OnInit {
   userForm: FormGroup;
@@ -22,21 +22,25 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.auth.emailLogin(this.userForm.value['email'], this.userForm.value['password'])
-      .then(() => this.router.navigate(['admin/dashboard']))
+    // activate spinner
+    this.auth.emailLogin(this.userForm.value[ 'email' ], this.userForm.value[ 'password' ])
+      .then(() => {
+      // desactivate spinner
+        return this.router.navigate([ 'admin/dashboard' ]);
+      });
   }
 
   buildForm() {
     this.userForm = this.fb.group({
-      'email': ['', [
+      'email': [ '', [
         Validators.required,
         Validators.email,
-      ]],
-      'password': ['', [
-        Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),
-        Validators.minLength(6),
-        Validators.maxLength(25),
-      ]],
+      ] ],
+      'password': [ '', [
+        // Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),
+        // Validators.minLength(6),
+        // Validators.maxLength(25),
+      ] ],
     });
   }
 
