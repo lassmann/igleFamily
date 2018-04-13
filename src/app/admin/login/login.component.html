@@ -1,10 +1,11 @@
 <div class="login-component">
   <div class="login-container">
+    <mat-spinner *ngIf="sendingForm" class="spinner"></mat-spinner>
     <div class="logo-container">
       <img src="../../../assets/logo1.png" alt="" class="logo-image">
     </div>
     <form [formGroup]="userForm" (ngSubmit)="login()">
-      <mat-form-field class="input-container">
+      <mat-form-field class="input-container" >
         <input type="email" matInput placeholder="email" formControlName="email" required>
       </mat-form-field>
       <mat-form-field class="input-container">

@@ -7,6 +7,7 @@ import {
   MatSelectModule,
   MatToolbarModule,
   MatMenuModule,
+  MatProgressSpinnerModule,
   MatDatepickerModule
 } from '@angular/material';
 
@@ -20,7 +21,8 @@ import {
     MatSelectModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatProgressSpinnerModule
   ],
   declarations: [],
   exports: [
@@ -30,7 +32,8 @@ import {
     MatSelectModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule {

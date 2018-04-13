@@ -13,6 +13,7 @@ type FormErrors = { [u in UserFields]: string };
 })
 export class LoginComponent implements OnInit {
   userForm: FormGroup;
+  sendingForm = false;
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
   }
@@ -22,10 +23,10 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // activate spinner
+    this.sendingForm = true;
     this.auth.emailLogin(this.userForm.value[ 'email' ], this.userForm.value[ 'password' ])
       .then(() => {
-      // desactivate spinner
+        this.sendingForm = false;
         return this.router.navigate([ 'admin/dashboard' ]);
       });
   }
