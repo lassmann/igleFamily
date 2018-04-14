@@ -26,7 +26,12 @@ export class FriendsComponent implements OnInit {
 
   buildForm() {
     this.create = true;
-    this.friendForm = this.fb.group({});
+    this.friendForm = this.fb.group({
+      'lider': [''],
+      'anfitrion': [''],
+      'lat': [''],
+      'lng': [''],
+    });
   }
 
   createFriendLocation() {

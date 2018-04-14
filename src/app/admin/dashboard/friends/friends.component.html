@@ -2,20 +2,20 @@
 <div class="form-container" *ngIf="create">
   <form [formGroup]="friendForm" (ngSubmit)="createFriendLocation()">
     <mat-form-field>
-      <input type="text" placeholder="Lider" matInput>
+      <input type="text" placeholder="Lider" matInput formControlName="lider">
     </mat-form-field>
     <mat-form-field>
-      <input type="text" placeholder="Anfitrion" matInput>
+      <input type="text" placeholder="Anfitrion" matInput formControlName="anfitrion">
     </mat-form-field>
     <mat-form-field>
-      <input type="text" placeholder="Latitud" matInput>
+      <input type="text" placeholder="Latitud" matInput formControlName="lat">
     </mat-form-field>
     <mat-form-field>
-      <input type="text" placeholder="Longitud" matInput>
+      <input type="text" placeholder="Longitud" matInput formControlName="lng">
     </mat-form-field>
     <div class="input-container button-container">
       <button mat-button class="cancel-button" (click)="create = false">CANCEL</button>
-      <button mat-button type="submit" [disabled]="!userForm.valid" class="login-button">CREAR</button>
+      <button mat-button type="submit" [disabled]="!friendForm.valid" class="login-button">CREAR</button>
     </div>
   </form>
 </div>

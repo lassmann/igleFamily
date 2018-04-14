@@ -26,7 +26,11 @@ export class CalendarComponent implements OnInit {
 
   buildForm() {
     this.create = true;
-    this.calendarForm = this.fb.group({});
+    this.calendarForm = this.fb.group({
+      'title': [''],
+      'address': [''],
+      'description': [''],
+    });
   }
 
   createEvent() {
