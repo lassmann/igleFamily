@@ -1,17 +1,17 @@
 <app-top-nav></app-top-nav>
 
-<mat-toolbar>
-  <span><a routerLink="/admin/dashboard/calendar">CALENDARIO</a></span>
-  <span><a routerLink="/admin/dashboard/blog">BLOG</a></span>
-  <span><a routerLink="/admin/dashboard/friends">GRUPOS DE AMIGOS</a></span>
+<mat-toolbar class="nav-bar-component">
+  <span><a class="nav-link" routerLink="/admin/dashboard/calendar">CALENDARIO</a></span>
+  <span><a class="nav-link" routerLink="/admin/dashboard/blog">BLOG</a></span>
+  <span><a class="nav-link" routerLink="/admin/dashboard/friends">GRUPOS DE AMIGOS</a></span>
 </mat-toolbar>
 
 <!--<ul>-->
-  <!--<li *ngFor="let item of list | async">-->
-    <!--{{ item | json }}-->
-    <!--<button (click)="removeItem(item.key)">borrar</button>-->
-    <!--<button (click)="updateItem(item.key)">Editar</button>-->
-  <!--</li>-->
+<!--<li *ngFor="let item of list | async">-->
+<!--{{ item | json }}-->
+<!--<button (click)="removeItem(item.key)">borrar</button>-->
+<!--<button (click)="updateItem(item.key)">Editar</button>-->
+<!--</li>-->
 <!--</ul>-->
 <!--<button (click)="createItem()">create</button>-->
 <router-outlet></router-outlet>

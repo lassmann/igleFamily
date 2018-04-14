@@ -5,15 +5,14 @@ import { FirebaseServiceService } from '../../services/firebase-service.service'
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  styleUrls: [ './dashboard.component.scss' ]
 })
 export class DashboardComponent implements OnInit {
   path: string;
   list: Observable<any[]>;
 
   constructor(private fbService: FirebaseServiceService) {
-    this.path = 'lucas';
-    this.list = fbService.getList(this.path);
+    // this.list = fbService.getList(this.path);
   }
 
   ngOnInit() {
