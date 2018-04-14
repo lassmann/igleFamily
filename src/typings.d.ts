@@ -13,7 +13,7 @@ interface User {
 }
 
 interface Blog {
-  date: string;
+  date: number;
   img: string;
   text: string;
   title: string;
@@ -24,8 +24,8 @@ interface Event {
   img: string;
   address: string;
   description: string;
-  startDate: string;
-  endDate: string;
+  startDate: number;
+  endDate: number;
 }
 
 interface FriendLocation {
@@ -36,7 +36,7 @@ interface FriendLocation {
   animation: string;
   icon: string;
   position: {
-    lat: string;
-    lng: string;
+    lat: number;
+    lng: number;
   };
 }
