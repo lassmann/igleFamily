@@ -9,9 +9,11 @@ import {Observable} from 'rxjs/Observable';
 })
 export class FriendsComponent implements OnInit {
   friendsList: Observable<any[]>;
+  path: string;
 
   constructor(db: AngularFireDatabase) {
     this.friendsList = db.list('friendsLocations').valueChanges();
+    this.path = 'friendsV2';
 
   }
 

@@ -9,9 +9,11 @@ import {Observable} from 'rxjs/Observable';
 })
 export class CalendarComponent implements OnInit {
   calendarList: Observable<any[]>;
+  path: string;
 
   constructor(db: AngularFireDatabase) {
     this.calendarList = db.list('events').valueChanges();
+    this.path = 'calendarV2';
   }
 
   ngOnInit() {

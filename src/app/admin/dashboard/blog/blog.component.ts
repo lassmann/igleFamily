@@ -8,12 +8,11 @@ import { FirebaseServiceService } from '../../../services/firebase-service.servi
   styleUrls: [ './blog.component.css' ]
 })
 export class BlogComponent implements OnInit {
-  displayedColumns = ['position', 'name', 'weight', 'symbol'];
   blogList: Observable<any[]>;
   path: string;
 
   constructor(private fbService: FirebaseServiceService) {
-    this.path = 'lucas';
+    this.path = 'blogV2';
     this.blogList = this.fbService.getList(this.path);
   }
 
