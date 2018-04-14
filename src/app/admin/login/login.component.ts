@@ -11,7 +11,7 @@ import { AuthService } from '../../core/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: [ './login.component.scss' ]
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   userForm: FormGroup;
@@ -29,25 +29,25 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.sendingForm = true;
-    this.auth.emailLogin(this.userForm.value[ 'email' ], this.userForm.value[ 'password' ])
+    this.auth.emailLogin(this.userForm.value['email'], this.userForm.value['password'])
       .then(() => {
         this.sendingForm = false;
         this.snackBar.open('Bienvenido', null, { duration: 2000 });
-        return this.router.navigate([ 'admin/dashboard' ]);
+        return this.router.navigate(['admin/dashboard']);
       });
   }
 
   buildForm() {
     this.userForm = this.fb.group({
-      'email': [ '', [
+      'email': ['', [
         Validators.required,
         Validators.email,
-      ] ],
-      'password': [ '', [
+      ]],
+      'password': ['', [
         // Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),
         // Validators.minLength(6),
         // Validators.maxLength(25),
-      ] ],
+      ]],
     });
   }
 

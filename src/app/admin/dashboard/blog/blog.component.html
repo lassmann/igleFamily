@@ -1,4 +1,20 @@
+<button (click)="buildForm()" *ngIf="!create">CREAR</button>
+<div class="form-container" *ngIf="create">
+  <form [formGroup]="blogForm"  (ngSubmit)="createBlogItem()">
+    <mat-form-field>
+      <input type="text" placeholder="Titulo" matInput formControlName="title">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" placeholder="Descripcion" matInput formControlName="description">
+    </mat-form-field>
+    <div class="input-container button-container">
+      <button mat-button class="cancel-button" (click)="create = false">CANCEL</button>
+      <button mat-button type="submit" [disabled]="!userForm.valid" class="login-button">CREAR</button>
+    </div>
+  </form>
+</div>
+
+<br><br>
 <!--<div *ngFor="let blog of blogList | async" class="card">-->
-  <!--{{blog | json}}-->
+<!--{{blog | json}}-->
 <!--</div>-->
-<button>Create</button>

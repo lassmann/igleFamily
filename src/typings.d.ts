@@ -13,10 +13,10 @@ interface User {
 }
 
 interface Blog {
+  title: string;
+  text: string;
   date: number;
   img: string;
-  text: string;
-  title: string;
 }
 
 interface Event {
