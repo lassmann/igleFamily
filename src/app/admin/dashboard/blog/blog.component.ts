@@ -8,6 +8,7 @@ import { FirebaseServiceService } from '../../../services/firebase-service.servi
   styleUrls: [ './blog.component.css' ]
 })
 export class BlogComponent implements OnInit {
+  displayedColumns = ['position', 'name', 'weight', 'symbol'];
   blogList: Observable<any[]>;
   path: string;
 

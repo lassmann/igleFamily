@@ -6,12 +6,12 @@
   <span><a routerLink="/admin/dashboard/friends">GRUPOS DE AMIGOS</a></span>
 </mat-toolbar>
 
-<ul>
-  <li *ngFor="let item of list | async">
-    {{ item | json }}
-    <button (click)="removeItem(item.key)">borrar</button>
-    <button (click)="updateItem(item.key)">Editar</button>
-  </li>
-</ul>
-<button (click)="createItem()">create</button>
+<!--<ul>-->
+  <!--<li *ngFor="let item of list | async">-->
+    <!--{{ item | json }}-->
+    <!--<button (click)="removeItem(item.key)">borrar</button>-->
+    <!--<button (click)="updateItem(item.key)">Editar</button>-->
+  <!--</li>-->
+<!--</ul>-->
+<!--<button (click)="createItem()">create</button>-->
 <router-outlet></router-outlet>

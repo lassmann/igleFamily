@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from '../../core/auth.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
-type UserFields = 'email' | 'password';
-type FormErrors = { [u in UserFields]: string };
+import { AuthService } from '../../core/auth.service';
+
+// type UserFields = 'email' | 'password';
+// type FormErrors = { [u in UserFields]: string };
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,10 @@ export class LoginComponent implements OnInit {
   userForm: FormGroup;
   sendingForm = false;
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
+  constructor(private fb: FormBuilder,
+              private auth: AuthService,
+              private router: Router,
+              private snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -27,6 +32,7 @@ export class LoginComponent implements OnInit {
     this.auth.emailLogin(this.userForm.value[ 'email' ], this.userForm.value[ 'password' ])
       .then(() => {
         this.sendingForm = false;
+        this.snackBar.open('Bienvenido', null, { duration: 2000 });
         return this.router.navigate([ 'admin/dashboard' ]);
       });
   }
