@@ -14,6 +14,9 @@ export class FriendsComponent implements OnInit {
   friendForm: FormGroup;
   path: string;
   create = false;
+  days = ['LUNES', 'MARTES', 'MIERCOLES', 'JUEVES', 'VIERNES', 'SABADO'];
+  hours = ['08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
+  minutes = ['00', '15', '30', '45'];
 
   constructor(db: AngularFireDatabase,
               private fb: FormBuilder) {
@@ -31,6 +34,8 @@ export class FriendsComponent implements OnInit {
       'anfitrion': [''],
       'lat': [''],
       'lng': [''],
+      'dia': [''],
+      'horario': ['']
     });
   }
 

@@ -30,6 +30,8 @@ export class CalendarComponent implements OnInit {
       'title': [''],
       'address': [''],
       'description': [''],
+      'startDate': [''],
+      'endDate': [''],
     });
   }
 

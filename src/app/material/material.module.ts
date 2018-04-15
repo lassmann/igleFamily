@@ -8,6 +8,7 @@ import {
   MatToolbarModule,
   MatMenuModule,
   MatProgressSpinnerModule,
+  MatNativeDateModule,
   MatDatepickerModule,
   MatSnackBarModule,
   MatTableModule
@@ -23,6 +24,7 @@ import {
     MatSelectModule,
     MatToolbarModule,
     MatMenuModule,
+    MatNativeDateModule,
     MatDatepickerModule,
     MatSnackBarModule,
     MatTableModule,
@@ -36,6 +38,7 @@ import {
     MatSelectModule,
     MatToolbarModule,
     MatMenuModule,
+    MatNativeDateModule,
     MatDatepickerModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,

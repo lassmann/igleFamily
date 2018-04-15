@@ -10,6 +10,16 @@
     <mat-form-field>
       <input type="text" placeholder="Descripcion" matInput formControlName="description">
     </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="desde" placeholder="Desde" formControlName="startDate">
+      <mat-datepicker-toggle matSuffix [for]="desde"></mat-datepicker-toggle>
+      <mat-datepicker #desde></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="hasta" placeholder="Hasta" formControlName="endDate">
+      <mat-datepicker-toggle matSuffix [for]="hasta"></mat-datepicker-toggle>
+      <mat-datepicker #hasta></mat-datepicker>
+    </mat-form-field>
     <div class="input-container button-container">
       <button mat-button class="cancel-button" (click)="create = false">CANCEL</button>
       <button mat-button type="submit" [disabled]="!calendarForm.valid" class="login-button">CREAR</button>

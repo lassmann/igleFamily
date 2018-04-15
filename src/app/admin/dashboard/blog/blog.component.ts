@@ -29,6 +29,7 @@ export class BlogComponent implements OnInit {
     this.blogForm = this.fb.group({
       'title': [''],
       'description': [''],
+      'date': ['']
     });
   }
 
