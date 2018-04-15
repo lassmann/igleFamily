@@ -2,21 +2,21 @@
 <div class="form-container" *ngIf="create">
   <form [formGroup]="calendarForm" (ngSubmit)="createEvent()">
     <mat-form-field>
-      <input type="text" placeholder="Titulo" matInput formControlName="title">
+      <input type="text" placeholder="Titulo" matInput formControlName="title" required>
     </mat-form-field>
     <mat-form-field>
-      <input type="text" placeholder="Direccion" matInput formControlName="address">
+      <input type="text" placeholder="Dirección" matInput formControlName="address" required>
     </mat-form-field>
     <mat-form-field>
-      <input type="text" placeholder="Descripcion" matInput formControlName="description">
+      <textarea  placeholder="Descripción" matInput formControlName="description"></textarea>
     </mat-form-field>
     <mat-form-field>
-      <input matInput [matDatepicker]="desde" placeholder="Desde" formControlName="startDate">
+      <input matInput [matDatepicker]="desde" placeholder="Desde" formControlName="startDate" required>
       <mat-datepicker-toggle matSuffix [for]="desde"></mat-datepicker-toggle>
       <mat-datepicker #desde></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-      <input matInput [matDatepicker]="hasta" placeholder="Hasta" formControlName="endDate">
+      <input matInput [matDatepicker]="hasta" placeholder="Hasta" formControlName="endDate" required>
       <mat-datepicker-toggle matSuffix [for]="hasta"></mat-datepicker-toggle>
       <mat-datepicker #hasta></mat-datepicker>
     </mat-form-field>
@@ -29,5 +29,5 @@
 
 <br><br>
 <!--<div *ngFor="let event of calendarList | async" class="card">-->
-  <!--{{event | json}}-->
+<!--{{event | json}}-->
 <!--</div>-->

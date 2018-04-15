@@ -2,10 +2,17 @@
 <div class="form-container" *ngIf="create">
   <form [formGroup]="blogForm"  (ngSubmit)="createBlogItem()">
     <mat-form-field>
-      <input type="text" placeholder="Titulo" matInput formControlName="title">
+      <input type="text" placeholder="Titulo" matInput formControlName="title" required>
     </mat-form-field>
     <mat-form-field>
-      <input type="text" placeholder="Descripcion" matInput formControlName="text">
+      <input type="text" placeholder="Descripcion" matInput formControlName="text" required>
+    </mat-form-field>
+
+    <!--todo: crear componente de subir archivos-->
+    <mat-form-field>
+      <!--<input type="file" placeholder="Archivo" matInput formControlName="img" required>-->
+      <!--<button type="button" mat-button (click)="imgFileInput.click()">Add a photo</button>-->
+      <!--<input hidden type="file" #imgFileInput (change)="previewImage($event)"/>-->
     </mat-form-field>
     <div class="input-container button-container">
       <button mat-button class="cancel-button" (click)="create = false">CANCEL</button>
