@@ -28,10 +28,11 @@ export class CalendarComponent implements OnInit {
     this.create = true;
     this.calendarForm = this.fb.group({
       'title': [''],
+      'image': [''],
       'address': [''],
       'description': [''],
       'startDate': [''],
-      'endDate': [''],
+      'endDate': ['']
     });
   }
 
