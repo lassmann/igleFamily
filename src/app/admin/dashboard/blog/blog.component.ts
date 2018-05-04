@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { FirebaseServiceService } from '../../../services/firebase-service.service';
+import { FirebaseServiceService } from '../../../services/firebase.service';
 
 @Component({
   selector: 'app-blog',

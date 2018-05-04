@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { FirebaseServiceService } from '../../services/firebase-service.service';
+import { FirebaseServiceService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-dashboard',

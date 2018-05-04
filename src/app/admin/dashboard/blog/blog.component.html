@@ -9,11 +9,11 @@
     </mat-form-field>
 
     <!--todo: crear componente de subir archivos-->
-    <mat-form-field>
-      <!--<input type="file" placeholder="Archivo" matInput formControlName="img" required>-->
-      <!--<button type="button" mat-button (click)="imgFileInput.click()">Add a photo</button>-->
-      <!--<input hidden type="file" #imgFileInput (change)="previewImage($event)"/>-->
-    </mat-form-field>
+    <!--<mat-form-field>-->
+      <!--<app-input-file formControlName="basicfile" placeholder="Basic Input" ></app-input-file>-->
+      <!--<mat-icon matSuffix>folder</mat-icon>-->
+    <!--</mat-form-field>-->
+
     <div class="input-container button-container">
       <button mat-button class="cancel-button" (click)="create = false">CANCEL</button>
       <button mat-button type="submit" [disabled]="!blogForm.valid" class="login-button">CREAR</button>

@@ -3,7 +3,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class FirebaseServiceService {
+export class FirebaseService {
 
   constructor(private db: AngularFireDatabase) {
   }
